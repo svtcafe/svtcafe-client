@@ -1,28 +1,34 @@
-<div align="center">
-  <img src="src/assets/logo.webp" width="100" />
-  <h1>SVTCAFE Client</h1>
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-[![](https://img.shields.io/badge/node-%3E%3D%2016.13.0-brightgreen)](https://nodejs.org/ko/blog/release/v18.2.0/) [![](https://img.shields.io/badge/npm-v8.1.2-blue)](https://www.npmjs.com/package/npm/v/8.1.2) [![](https://img.shields.io/badge/types-TypeScript-blue)](https://gitlab.mailplug.co.kr/dev2-frontend/ms-desktop)
+## Getting Started
 
-</div>
-
-## Development
-
-프로젝트 실행
+First, run the development server:
 
 ```bash
-$ yarn        # 패키지 설치
-$ yarn start  # 개벌서버로 프로젝트 실행
+npm run dev
+# or
+yarn dev
 ```
 
-## Production (Deploy)
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-프로젝트 빌드
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-```bash
-$ yarn build
-```
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-## Links
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-- server code: https://github.com/svtcafe/svtcafe-server
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

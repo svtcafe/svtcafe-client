@@ -1,6 +1,9 @@
 import styled from '@emotion/styled';
+
 import Footer from './Footer';
 import Header from './Header';
+
+import { ESizes } from '@/styles/styles';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -27,4 +30,9 @@ const Container = styled.div`
 
 const Main = styled.main`
   flex: 1;
+  width: 100%;
+  max-width: ${ESizes.content}px;
+  padding: 0 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
 `;

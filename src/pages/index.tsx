@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import type { NextPage } from 'next';
 
-import { Button, ContentHeader } from '@/components';
+import { Button, ContentHeader, ContentIntro } from '@/components';
 
 const Home: NextPage = () => {
   return (
@@ -24,8 +24,9 @@ const Home: NextPage = () => {
       <TestZone style={{ width: 300 }}>
         <Button label='SIGN UP' color='primary' fullWidth />
       </TestZone>
-      <TestZone style={{ width: 300 }}>
-        <ContentHeader>New Event</ContentHeader>
+      <TestZone style={{ flexDirection: 'column' }}>
+        <ContentHeader>Event Cafe</ContentHeader>
+        <ContentIntro size='md'>다양한 이벤트를 만나보세요</ContentIntro>
       </TestZone>
     </Container>
   );

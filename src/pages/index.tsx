@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import type { NextPage } from 'next';
 
-import { Button } from '@/components';
+import { Button, ContentHeader } from '@/components';
 
 const Home: NextPage = () => {
   return (
@@ -23,6 +23,9 @@ const Home: NextPage = () => {
       </TestZone>
       <TestZone style={{ width: 300 }}>
         <Button label='SIGN UP' color='primary' fullWidth />
+      </TestZone>
+      <TestZone style={{ width: 300 }}>
+        <ContentHeader>New Event</ContentHeader>
       </TestZone>
     </Container>
   );

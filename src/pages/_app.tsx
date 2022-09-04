@@ -12,8 +12,10 @@ type AppPropsWithLayout = AppProps & {
 };
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+  const { hideFooter, fullContentWidth } = Component;
+
   return (
-    <Layout nofooter={Component.hideFooter}>
+    <Layout nofooter={hideFooter} fullWidth={fullContentWidth}>
       <Global styles={globalStyle} />
       <Component {...pageProps} />
     </Layout>

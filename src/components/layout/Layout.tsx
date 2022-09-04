@@ -8,13 +8,14 @@ import { ESizes } from '@/styles/styles';
 interface LayoutProps {
   children: React.ReactNode;
   nofooter?: boolean;
+  fullWidth?: boolean;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children, nofooter }) => {
+const Layout: React.FC<LayoutProps> = ({ children, nofooter, fullWidth }) => {
   return (
     <Container>
       <Header />
-      <Main>{children}</Main>
+      <Main fullWidth={fullWidth}>{children}</Main>
       {!nofooter && <Footer />}
     </Container>
   );
@@ -28,11 +29,13 @@ const Container = styled.div`
   min-height: 100vh;
 `;
 
-const Main = styled.main`
+const Main = styled.main<{ fullWidth?: boolean }>`
+  display: flex;
+  flex-direction: column;
   flex: 1;
   width: 100%;
-  max-width: ${ESizes.content}px;
-  padding: 0 20px;
+  max-width: ${({ fullWidth }) => (fullWidth ? '100%' : `${ESizes.content}px`)};
+  padding: 0 ${({ fullWidth }) => (fullWidth ? 0 : `20px`)};
   margin: 0 auto;
   box-sizing: border-box;
 `;

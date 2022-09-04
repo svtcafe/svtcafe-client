@@ -10,3 +10,6 @@ export { default as NavLink } from './common/NavLink';
 export { default as ContentHeader } from './common/ContentHeader';
 export { default as ContentIntro } from './common/ContentIntro';
 
+// home
+export { default as IntroYoutube } from './home/IntroYoutube';
+export { default as IntroButton } from './home/IntroButton';

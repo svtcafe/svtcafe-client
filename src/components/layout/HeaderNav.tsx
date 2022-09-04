@@ -20,7 +20,7 @@ const HeaderNav: React.FC<HeaderNavProps> = ({ className }) => {
   const [enableAnimation] = useMediaQuerySSR({ query: mq[BreakPoint.phablet] });
 
   const [menuActive, toggleMenuActive] = useToggle(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
     <Container className={className}>
@@ -79,6 +79,7 @@ const MenuContainer = styled.div<{ active?: boolean; animation?: boolean }>`
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
+  margin-left: 10px;
   flex: 1;
 
   transition: transform ${({ animation }) => (animation ? 0.3 : 0)}s;
@@ -95,6 +96,7 @@ const MenuContainer = styled.div<{ active?: boolean; animation?: boolean }>`
     transform: translateX(${({ active }) => (active ? '0%' : '100%')});
     box-sizing: border-box;
     padding: 30px;
+    margin-left: 0;
   }
 `;
 
@@ -171,13 +173,6 @@ const Close = styled(Icon)`
 
 const Buttons = styled.div`
   display: flex;
-
-  button {
-    margin-right: 10px;
-    &:last-child {
-      margin-right: 0;
-    }
-  }
 `;
 
 const AuthButton = styled(Button)`
@@ -198,8 +193,11 @@ const AuthButton = styled(Button)`
 
   ${breakpoint(BreakPoint.phablet)} {
     width: 100%;
-    margin-left: 0;
     margin-bottom: 10px;
+
+    :first-of-type {
+      margin-left: 0;
+    }
   }
 `;
 

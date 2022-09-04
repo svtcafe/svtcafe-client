@@ -26,6 +26,10 @@ export const enum EColors {
   transparent = 'transparent',
 }
 
+export const enum ESizes {
+  content = 1020,
+}
+
 export const enum EFontSizes {
   h1 = '4.5rem',
   h2 = '3.5rem',

@@ -1,9 +1,8 @@
 import styled from '@emotion/styled';
-import type { NextPage } from 'next';
 
 import { Button, ContentHeader, ContentIntro } from '@/components';
 
-const Home: NextPage = () => {
+const Home: NextPageWithLayout = () => {
   return (
     <Container>
       home

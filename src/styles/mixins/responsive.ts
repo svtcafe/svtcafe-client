@@ -18,32 +18,22 @@ const SCREEN_SIZE = {
   [BreakPoint.mobile_small]: 320,
 } as const;
 
-export const breakpoint = (point: BreakPoint) => {
-  switch (point) {
-    case BreakPoint.desktop:
-      return `@media (max-width: ${SCREEN_SIZE[BreakPoint.desktop]}px)`;
-    case BreakPoint.desktop_only:
-      return `@media (min-width: ${SCREEN_SIZE[BreakPoint.desktop]}px)`;
-    case BreakPoint.tablet:
-      return `@media (max-width: ${SCREEN_SIZE[BreakPoint.tablet]}px)`;
-    case BreakPoint.tablet_only:
-      return `@media (max-width: ${SCREEN_SIZE[BreakPoint.tablet]}) and (min-width: ${
-        SCREEN_SIZE[BreakPoint.phablet]
-      })`;
-    case BreakPoint.phablet:
-      return `@media (max-width: ${SCREEN_SIZE[BreakPoint.phablet]}px)`;
-    case BreakPoint.phablet_only:
-      return `@media (max-width: ${SCREEN_SIZE[BreakPoint.phablet]}) and (min-width: ${
-        SCREEN_SIZE[BreakPoint.mobile]
-      })`;
-    case BreakPoint.mobile:
-      return `@media (max-width: ${SCREEN_SIZE[BreakPoint.mobile]}px)`;
-    case BreakPoint.mobile_only:
-      return `@media (max-width: ${SCREEN_SIZE[BreakPoint.mobile]}) and (min-width: ${
-        SCREEN_SIZE[BreakPoint.mobile_small]
-      })`;
-    case BreakPoint.mobile_small:
-    default:
-      return `@media (max-width: ${SCREEN_SIZE[BreakPoint.mobile_small]}px)`;
-  }
+export const mq = {
+  [BreakPoint.desktop]: `(max-width: ${SCREEN_SIZE[BreakPoint.desktop]}px)`,
+  [BreakPoint.desktop_only]: `(min-width: ${SCREEN_SIZE[BreakPoint.desktop]}px)`,
+  [BreakPoint.tablet]: `(max-width: ${SCREEN_SIZE[BreakPoint.tablet]}px)`,
+  [BreakPoint.tablet_only]: `(max-width: ${SCREEN_SIZE[BreakPoint.tablet]}) and (min-width: ${
+    SCREEN_SIZE[BreakPoint.phablet]
+  })`,
+  [BreakPoint.phablet]: `(max-width: ${SCREEN_SIZE[BreakPoint.phablet]}px)`,
+  [BreakPoint.phablet_only]: `(max-width: ${SCREEN_SIZE[BreakPoint.phablet]}) and (min-width: ${
+    SCREEN_SIZE[BreakPoint.mobile]
+  })`,
+  [BreakPoint.mobile]: `(max-width: ${SCREEN_SIZE[BreakPoint.mobile]}px)`,
+  [BreakPoint.mobile_only]: `(max-width: ${SCREEN_SIZE[BreakPoint.mobile]}) and (min-width: ${
+    SCREEN_SIZE[BreakPoint.mobile_small]
+  })`,
+  [BreakPoint.mobile_small]: `(max-width: ${SCREEN_SIZE[BreakPoint.mobile_small]}px)`,
 };
+
+export const breakpoint = (point: BreakPoint) => `@media ${mq[point]}`;

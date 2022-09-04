@@ -1,11 +1,23 @@
 import type { AppProps } from 'next/app';
+import { Global } from '@emotion/react';
+
+import { Layout } from '@/components';
+import { globalStyle } from '@/styles/global';
 
 import '@/styles/reset.css';
 import '@/styles/font.css';
-import '@/styles/global.css';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout;
+};
+
+function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+  return (
+    <Layout nofooter={Component.hideFooter}>
+      <Global styles={globalStyle} />
+      <Component {...pageProps} />
+    </Layout>
+  );
 }
 
 export default MyApp;

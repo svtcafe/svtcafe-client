@@ -42,7 +42,6 @@ let ButtonElement = styled.button<ButtonProps>`
   border: none;
   font-weight: ${EFontWeight.bold};
   cursor: pointer;
-  transition: all 0.2s;
 
   ${({ color, outlined }) =>
     color === 'light' &&

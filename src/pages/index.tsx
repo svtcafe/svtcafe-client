@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import { Button } from '@/components';
+import { Button, ContentHeader, ContentIntro } from '@/components';
 
 const Home: NextPageWithLayout = () => {
   return (
@@ -22,6 +22,10 @@ const Home: NextPageWithLayout = () => {
       </TestZone>
       <TestZone style={{ width: 300 }}>
         <Button label='SIGN UP' color='primary' fullWidth />
+      </TestZone>
+      <TestZone style={{ maxWidth: 980, flexDirection: 'column' }}>
+        <ContentHeader>Event Cafe</ContentHeader>
+        <ContentIntro size='md'>다양한 이벤트를 만나보세요</ContentIntro>
       </TestZone>
     </Container>
   );
